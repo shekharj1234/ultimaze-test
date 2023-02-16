@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function App() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   useEffect(() => {
     axios({
       method: "get",
@@ -13,7 +13,7 @@ export default function App() {
       },
     }).then((response) => setData(response.data.message));
   });
-  console.log("data", data);
+  // console.log("data", data);
   return (
     <div className="App">
       <h2>Create New Product</h2>
@@ -68,27 +68,26 @@ export default function App() {
       </div>
       <div className="list-wrap">
         <table>
-          <thead>
-            <row>
-              <th>Product Id</th>
-              <th>Product Name</th>
-              <th>Original Price</th>
-              <th>Sales Price</th>
-              <th>Product Type</th>
-              <th>Description</th>
-            </row>
-          </thead>
+          <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Original Price</th>
+            <th>Sales Price</th>
+            <th>Product Type</th>
+            <th>Description</th>
+          </tr>
+
           <tbody>
-            {data.map((list) => {
+            {data?.map((list) => {
               return (
-                <row key={list._id}>
+                <tr key={list._id}>
                   <td>{list._id}</td>
                   <td>{list.product_name}</td>
                   <td>{list.original_price}</td>
                   <td>{list.sale_price}</td>
                   <td>{list.product_type}</td>
                   <td>{list.description}</td>
-                </row>
+                </tr>
               );
             })}
           </tbody>
