@@ -74,3 +74,9 @@ https://ultimez-react-task.vercel.app/
 
 #Live server URL
 https://gilded-gaufre-be047c.netlify.app/
+
+# Create New Product can you below url and api_key
+url: "https://lobster-app-ddwng.ondigitalocean.app/product/list"
+api_key: "Z9Q7WKEY7ORGBUFGN3EG1QS5Y7FG8DU29GHKKSZH",
+
+
